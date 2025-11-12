@@ -25,6 +25,30 @@ let score = JSON.parse(localStorage.getItem(`score`));
       }
 
       updateScore();
+  
+      //using addEventListener instead of onclick. 
+      document.querySelector('.js-event1').addEventListener('click', () => {
+        playGame('rock');
+      })
+
+      document.querySelector('.js-event2').addEventListener('click', () => {
+        playGame('paper');
+      })
+
+      document.querySelector('.js-event3').addEventListener('click', () => {
+        playGame('scissor');
+      })
+
+      //addEventListener and event playing game using keys r , p ,s.
+      document.body.addEventListener('keydown', (event) => {
+         if(event.key === 'r') {
+          playGame('rock');
+         }else if(event.key === 'p') {
+          playGame('paper');
+         }else if(event.key === 's') {
+          playGame('scissor');
+         }
+      });
 
       /*now we gonna create another function*/
 
